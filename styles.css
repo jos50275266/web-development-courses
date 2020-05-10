@@ -80,3 +80,29 @@ nav li {
 .form-section {
   text-align: center;
 }
+
+form {
+}
+
+form input,
+form label,
+form textarea {
+  display: block;
+  font-size: 2.4rem;
+  width: 50%;
+}
+
+form input,
+form textarea {
+  /* top and bottom */
+  margin: 2rem auto;
+}
+
+form button {
+  margin-bottom: 10rem;
+  padding: 1rem 4rem;
+  background: rgb(61, 81, 102);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
