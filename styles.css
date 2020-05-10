@@ -57,3 +57,26 @@ nav li {
   margin: 0rem 4rem;
 }
 
+.hero-section {
+  background-image: url(/burger-and-vegetables-placed-on-brown-wood-surface-1565982.jpg);
+  height: 60rem;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  padding-top: 15rem;
+  text-shadow: 3px 8px 3px black;
+}
+
+.hero-section button {
+  margin-top: 4rem;
+  padding: 1rem 4rem;
+  background: rgb(61, 81, 102);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.form-section {
+  text-align: center;
+}
