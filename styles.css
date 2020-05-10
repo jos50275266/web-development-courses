@@ -9,6 +9,7 @@ html {
   font-size: 62.5%;
 }
 
+/* 이 상태에서 box2를 box1의 우측으로 보내보자. */
 .box1,
 .box2,
 .box3 {
