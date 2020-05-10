@@ -15,9 +15,27 @@ html {
 .box3 {
   /* Instead of width, we can use it like it is responsive size */
   /* min-width: 80rem */
-  max-width: 60rem;
+  width: 48%;
+  /* max-width: 60rem; */
   height: 30rem;
   border: 2px solid black;
-  margin: 1rem;
+  margin: 0.5%;
+  padding: 1rem;
   font-size: 2.8rem;
+}
+
+.box1 {
+  float: left;
+}
+
+.box2 {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.box3 {
+  width: 100%;
 }
