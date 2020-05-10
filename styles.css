@@ -9,33 +9,12 @@ html {
   font-size: 62.5%;
 }
 
-/* 이 상태에서 box2를 box1의 우측으로 보내보자. */
-.box1,
-.box2,
-.box3 {
-  /* Instead of width, we can use it like it is responsive size */
-  /* min-width: 80rem */
-  width: 48%;
-  /* max-width: 60rem; */
-  height: 30rem;
-  border: 2px solid black;
-  margin: 0.5%;
-  padding: 1rem;
-  font-size: 2.8rem;
+html,
+body {
+  height: 100%;
 }
 
 .box1 {
-  float: left;
+  height: 50%;
 }
 
-.box2 {
-  float: right;
-}
-
-.clear {
-  clear: both;
-}
-
-.box3 {
-  width: 100%;
-}
