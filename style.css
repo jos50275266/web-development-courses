@@ -1,0 +1,137 @@
+/* Global Style */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+li,
+button,
+label,
+input,
+p {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 4.8rem;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+h4,
+h5 {
+  font-size: 2.8rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+button {
+  padding: 2rem 6rem;
+  background: #4c6e97;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+button {
+  padding: 1.8rem 5rem;
+  background: #4c6e97;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Nav Section with Hero */
+
+.main-head {
+  background: #131c27;
+  color: white;
+}
+
+nav {
+  display: flex;
+  /* width: 90%;
+  margin: auto; */
+  padding: 2rem;
+  min-height: 10vh;
+  align-items: center;
+  /* 이거 테스트 해보기 */
+  flex-wrap: wrap;
+}
+
+/* flex 1 1 40rem 을 해줌으로써 nav ul 랑 #logo랑 1:1로 나눠 가지기 */
+nav ul {
+  display: flex;
+  /* grow shrink basis */
+  flex: 1 1 40rem;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+#logo {
+  flex: 2 1 40rem;
+  font-family: "Pattaya", sans-serif;
+  font-weight: 400;
+}
+
+/* .hero */
+.hero {
+  min-height: 90vh;
+  /* 위로 갈수록 어두워지도록 설정 */
+  /* 밑으로 갈수록 투명해지도록 */
+  /* 
+  background: linear-gradient(rgba(0, 0, 0, 0.1), transparent),
+  */
+  background: linear-gradient(rgba(0, 0, 0, 0.3), transparent),
+    url("/img//landing-page.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h3 {
+  padding: 5rem;
+}
+
+@media screen and (max-width: 932px) {
+  html {
+    font-size: 45%;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  #logo {
+    padding: 2rem;
+  }
+}
