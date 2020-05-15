@@ -47,7 +47,7 @@ a {
 
 button {
   padding: 2rem 6rem;
-  background: #1178ee;
+  background: rgb(97, 97, 241);
   border: none;
   color: white;
   font-size: 1.8rem;
@@ -130,7 +130,7 @@ nav ul {
   /* 
   background: linear-gradient(rgba(0, 0, 0, 0.1), transparent),
   */
-  background: linear-gradient(rgba(0, 0, 0, 0.3), transparent),
+  background: linear-gradient(rgba(0, 0, 0, 0.9), transparent),
     url("/img//landing-page.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -176,7 +176,7 @@ nav ul {
 
 .locations-head h3 {
   padding: 4rem 0rem;
-  background: linear-gradient(#131c27, #663b34);
+  background: linear-gradient(#072e58, #663b34);
   /* Background only on text */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -274,6 +274,7 @@ nav ul {
 .card h4,
 .card p {
   padding: 1rem;
+  line-height: 2;
 }
 
 .card-icon {
@@ -353,6 +354,11 @@ footer ul {
   flex: 1 1 40rem;
   justify-content: space-between;
   align-items: center;
+}
+
+button:focus {
+  background: #2c3f57;
+  outline-style: solid;
 }
 
 /* Media Query */
