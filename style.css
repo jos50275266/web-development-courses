@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.boxes {
+  border: 1rem solid rgb(146, 146, 146);
+}
+
+.box {
+  padding: 3rem;
+}
+
+.box1 {
+  background: rgb(188, 216, 233);
+  /* grid 이름을 줄 수 있다. */
+  /* grid-area: box1; */
+
+  /* 위 방식 대신에 - where to where this block one should go  */
+  /* grid-column: 1/4; */
+  /* 
+  1 / 2는 1 ~ 2 까지 stretch
+  |   |   |
+  1   2   3 
+  */
+
+  grid-column: 1/2;
+}
+
+.box2 {
+  background: rgb(211, 166, 166);
+  /* grid-area: box2; */
+  grid-column: 2/3;
+  /* 지혼자 하고 싶으면 */
+  justify-self: end;
+  align-self: end;
+}
+
+.box3 {
+  background: rgb(163, 126, 160);
+  /* grid-area: box3; */
+
+  /* grid-row: 1 / 3; */
+  /*  1 ~ 3 까지 stretch
+  1 _
+
+  2 _
+
+  3 _
+  */
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+
+.box4 {
+  background: rgb(139, 163, 132);
+  /* grid-area: box4; */
+}
+
+.box5 {
+  background: rgb(177, 176, 146);
+  /* grid-area: box5; */
+  justify-self: start;
+  align-self: start;
+}
+
+/* Parent */
+.boxes {
+  /* display: flex;
+  flex-direction: column; */
+
+  /* display: grid; */
+  /* Create Different Columns vertically */
+  /* grid-template-columns: 10rem 10rem 10rem; */
+
+  /* grid-template-columns: 10rem 1fr 10rem; */
+  /* 양쪽으로 10rem 씩 쓰고 나머지 공간 1:1 비율로 나누기 */
+  /* grid-template-columns: 10rem 1fr 1fr 10rem; */
+  /* grid-template-columns: 5rem 1fr 1fr 5rem; */
+  /* grid-template-columns: 1fr 1fr 1fr; */
+
+  /* maximum: 12fr */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+  /* 위와 동일 */
+  /* grid-template-columns: repeat(5, 1fr); */
+
+  /* grid-template-columns: 5% repeat(2, 1fr) 5%; */
+
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-rows: auto; */
+  /* grid-template-rows: 50rem 50rem; */
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 20rem 20rem;
+  /* .은 empty space */
+  /* grid-template-areas:
+    "box2 box1 box3"
+    "box4 . box5"; */
+
+  /* grid-template-areas:
+    "box2 . box3"
+    "box4 . box5"; */
+
+  /* grid-template-areas:
+    "box2 box2 box3"
+    "box4 box1 box5"; */
+
+  /* grid-template-areas:
+    "box2 box2 box3"
+    "box4 box1 ."
+    "box5 box5 box5"; */
+
+  /* 실제 레이아웃 잡을떄 */
+  /* grid-template-areas:
+    "header header header"
+    "margin section margin"
+    "footer footer footer"; */
+
+  /* gap */
+  /* grid-column-gap: 1rem; */
+  /* grid-row-gap: 1rem; */
+
+  /* 요거는 column-gap + row-gap */
+  grid-gap: 1rem;
+  /* justify-items: center or end or start or stretch  */
+  justify-items: center;
+  align-items: start;
+}
+
+/*
+ grid를 사용할때 부모 container에 display: grid 설정
+
+grid-template-columns: 
+30rem 30rem은 딱 요 크기 만큼만
+1fr 1fr 1fr은 모든 공간을 균등히 나눠서 하나씩 가짐
+1rem 1fr 1fr 1rem은 모든 공간 - 2rem = 값을 균등이 나눠서 하나씩 가짐
+20% 1fr 1fr 20%는 모든 공간 - 40% = 값을 균등이 나눠서 하나씩 감짐
+  _  _  _  
+|  |  |  |
+
+grid-template-rows: 20rem 2rem
+_
+ | 요거 높이가 20rem
+_
+ | 요거 높이가 20rem
+
+grid 자식 요소에게 이름 붙이기
+grid-area: box1
+grid-area: box2
+grid-area: box3
+
+
+부모에서 자식 grid 배치하기
+grid-template-areas:
+    "box1 box2 box3"
+    "box1 box2 box3"
+    "box1 box2 box2"
+or
+
+레이아웃 잡을때
+grid-template-areas:
+    "header header header"
+    "margin section margin"
+    "footer footer footer"
+
+
+만약 이 방식 대신에 다른 방식을 이용하고 싶을때
+grid 자식 요소에 가서
+- grid-column & grid-row 이용하기
+의미
+
+grid-column: 1 / 2
+  1 / 2는 1 ~ 2 까지 stretch
+  |   |   |
+  1   2   3 
+
+grid-row: 1 / 3
+  1 ~ 3 까지 stretch
+  1 _
+
+  2 _
+
+  3 _
+
+
+이제 grid-gap 설정하기
+grid 부모에서
+
+gap 
+grid-column-gap: 1rem;
+grid-row-gap: 1rem;
+
+요거는 column-gap + row-gap
+grid-gap: 1rem;
+
+
+justify-items: stretch, start, end, center;
+align-items: stretch, start, end, center;
+
+이렇게 하면 전체 기준 대신에
+grid 자식 요소가 자기 것만 하고 싶을때
+
+justify-self: stretch, start, end, and center;
+align-self: strecth, start, end, and center;
+*/
